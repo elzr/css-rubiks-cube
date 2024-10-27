@@ -71,7 +71,7 @@
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	background-color: rgba(0,30,60,0.2);
+	/* background-color: rgba(0,30,60,0.2); */
 	/*border-radius: 16px;*/
 	transform-style: preserve-3d;
 }
