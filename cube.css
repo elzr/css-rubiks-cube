@@ -1,107 +1,761 @@
-﻿body {
-	background: lightgrey;
-	overflow: hidden;
+body {
+  background: lightgrey;
+  overflow: hidden;
 }
 
 .scene {
-	margin: 230px auto;
-	width: 100px;
-	perspective: 1000px;
-	perspective-origin: 50% 50%;
+  margin: 230px auto;
+  width: 100px;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
 }
-@media (max-width: 500px) {.scene {transform: scale(.7);}}
-@media (max-width: 400px) {.scene {transform: scale(.6);}}
 
+@media (max-width: 500px) {
+  .scene {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 400px) {
+  .scene {
+    transform: scale(0.6);
+  }
+}
 .cube {
-	position: relative;
-	transform-style: preserve-3d;
-	transform-origin: 50px 50px;
-	transform: rotateY(-30deg) rotateX(-20deg) rotateZ(9deg);
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50px 50px;
+  transform: rotateY(-30deg) rotateX(-20deg) rotateZ(9deg);
 }
+
 .cube-layer {
-	transform-style: preserve-3d;
-	transform-origin: 50px 50px;
+  transform-style: preserve-3d;
+  transform-origin: 50px 50px;
 }
+
 .cube-layer.turn {
-	transition: transform .8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: transform 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .cubie {
-	transform-style: preserve-3d;
-	transform-origin: 50px 50px;
+  transform-style: preserve-3d;
+  transform-origin: 50px 50px;
 }
 
-.cubie-corner-position-0 { transform: translate3d(100px, -100px, 100px); }
-.cubie-corner-position-1 { transform: translate3d(-100px, -100px, 100px) rotateY(-90deg); }
-.cubie-corner-position-2 { transform: translate3d(100px, -100px, -100px) rotateY(90deg); }
-.cubie-corner-position-3 { transform: translate3d(-100px, -100px, -100px) rotateY(180deg); }
-.cubie-corner-position-4 { transform: translate3d(100px, 100px, 100px) rotateX(180deg) rotateY(90deg); }
-.cubie-corner-position-5 { transform: translate3d(-100px, 100px, 100px) rotateX(180deg) rotateY(180deg); }
-.cubie-corner-position-6 { transform: translate3d(100px, 100px, -100px) rotateX(180deg); }
-.cubie-corner-position-7 { transform: translate3d(-100px, 100px, -100px) rotateX(180deg) rotateY(-90deg); }
+.cubie-corner-position-0 {
+  transform: translate3d(100px, -100px, 100px);
+}
 
-.cubie-corner-orientation-0 {}
-.cubie-corner-orientation-1 { transform: rotateY(-90deg) rotateX(90deg); }
-.cubie-corner-orientation-2 { transform: rotateY(90deg) rotateZ(-90deg); }
+.cubie-corner-position-1 {
+  transform: translate3d(-100px, -100px, 100px) rotateY(-90deg);
+}
 
-.cubie-edge-position-0  { transform: translate3d(0px, -100px, 100px); }
-.cubie-edge-position-1  { transform: translate3d(-100px, -100px, 0px) rotateY(-90deg); }
-.cubie-edge-position-2  { transform: translate3d(100px, -100px, 0px) rotateY(90deg); }
-.cubie-edge-position-3  { transform: translate3d(0px, -100px, -100px) rotateY(180deg); }
-.cubie-edge-position-4  { transform: translate3d(0px, 100px, 100px) rotateX(180deg) rotateY(180deg); }
-.cubie-edge-position-5  { transform: translate3d(-100px, 100px, 0px) rotateX(180deg) rotateY(-90deg); }
-.cubie-edge-position-6  { transform: translate3d(100px, 100px, 0px) rotateX(180deg) rotateY(90deg); }
-.cubie-edge-position-7  { transform: translate3d(0px, 100px, -100px) rotateX(180deg); }
-.cubie-edge-position-8  { transform: translate3d(100px, 0px, 100px) rotateX(-90deg) rotateY(90deg); }
-.cubie-edge-position-9  { transform: translate3d(-100px, 0px, 100px) rotateX(-90deg) rotateY(-90deg); }
-.cubie-edge-position-10 { transform: translate3d(100px, 0px, -100px) rotateX(90deg) rotateY(90deg); }
-.cubie-edge-position-11 { transform: translate3d(-100px, 0px, -100px) rotateX(90deg) rotateY(-90deg); }
+.cubie-corner-position-2 {
+  transform: translate3d(100px, -100px, -100px) rotateY(90deg);
+}
 
-.cubie-edge-orientation-0 {}
-.cubie-edge-orientation-1 { transform: rotateX(-90deg) rotateY(180deg); }
+.cubie-corner-position-3 {
+  transform: translate3d(-100px, -100px, -100px) rotateY(180deg);
+}
 
-.cubie-middle-r  { transform: translate3d(100px, 0px, 0px); }
-.cubie-middle-l  { transform: translate3d(-100px, 0px, 0px); }
-.cubie-middle-f  { transform: translate3d(0px, 0px, 100px); }
-.cubie-middle-b  { transform: translate3d(0px, 0px, -100px); }
-.cubie-middle-u  { transform: translate3d(0px, -100px, 0px); }
-.cubie-middle-d  { transform: translate3d(0px, 100px, 0px); }
+.cubie-corner-position-4 {
+  transform: translate3d(100px, 100px, 100px) rotateX(180deg) rotateY(90deg);
+}
+
+.cubie-corner-position-5 {
+  transform: translate3d(-100px, 100px, 100px) rotateX(180deg) rotateY(180deg);
+}
+
+.cubie-corner-position-6 {
+  transform: translate3d(100px, 100px, -100px) rotateX(180deg);
+}
+
+.cubie-corner-position-7 {
+  transform: translate3d(-100px, 100px, -100px) rotateX(180deg) rotateY(-90deg);
+}
+
+.cubie-corner-orientation-1 {
+  transform: rotateY(-90deg) rotateX(90deg);
+}
+
+.cubie-corner-orientation-2 {
+  transform: rotateY(90deg) rotateZ(-90deg);
+}
+
+.cubie-edge-position-0 {
+  transform: translate3d(0px, -100px, 100px);
+}
+
+.cubie-edge-position-1 {
+  transform: translate3d(-100px, -100px, 0px) rotateY(-90deg);
+}
+
+.cubie-edge-position-2 {
+  transform: translate3d(100px, -100px, 0px) rotateY(90deg);
+}
+
+.cubie-edge-position-3 {
+  transform: translate3d(0px, -100px, -100px) rotateY(180deg);
+}
+
+.cubie-edge-position-4 {
+  transform: translate3d(0px, 100px, 100px) rotateX(180deg) rotateY(180deg);
+}
+
+.cubie-edge-position-5 {
+  transform: translate3d(-100px, 100px, 0px) rotateX(180deg) rotateY(-90deg);
+}
+
+.cubie-edge-position-6 {
+  transform: translate3d(100px, 100px, 0px) rotateX(180deg) rotateY(90deg);
+}
+
+.cubie-edge-position-7 {
+  transform: translate3d(0px, 100px, -100px) rotateX(180deg);
+}
+
+.cubie-edge-position-8 {
+  transform: translate3d(100px, 0px, 100px) rotateX(-90deg) rotateY(90deg);
+}
+
+.cubie-edge-position-9 {
+  transform: translate3d(-100px, 0px, 100px) rotateX(-90deg) rotateY(-90deg);
+}
+
+.cubie-edge-position-10 {
+  transform: translate3d(100px, 0px, -100px) rotateX(90deg) rotateY(90deg);
+}
+
+.cubie-edge-position-11 {
+  transform: translate3d(-100px, 0px, -100px) rotateX(90deg) rotateY(-90deg);
+}
+
+.cubie-edge-orientation-1 {
+  transform: rotateX(-90deg) rotateY(180deg);
+}
+
+.cubie-middle-r {
+  transform: translate3d(100px, 0px, 0px);
+}
+
+.cubie-middle-l {
+  transform: translate3d(-100px, 0px, 0px);
+}
+
+.cubie-middle-f {
+  transform: translate3d(0px, 0px, 100px);
+}
+
+.cubie-middle-b {
+  transform: translate3d(0px, 0px, -100px);
+}
+
+.cubie-middle-u {
+  transform: translate3d(0px, -100px, 0px);
+}
+
+.cubie-middle-d {
+  transform: translate3d(0px, 100px, 0px);
+}
 
 .cubie-face {
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	/* background-color: rgba(0,30,60,0.2); */
-	/*border-radius: 16px;*/
-	transform-style: preserve-3d;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* background-color: rgba(0,30,60,0.2); */
+  /*border-radius: 16px;*/
+  transform-style: preserve-3d;
 }
-.face-u { transform: rotateX(90deg)  translateZ(50px); }
-.face-f { transform:                 translateZ(50px); }
-.face-r { transform: rotateY(90deg)  translateZ(50px); }
-.face-l { transform: rotateY(-90deg) translateZ(50px); }
-.face-b { transform: rotateY(180deg) translateZ(50px); }
-.face-d { transform: rotateX(-90deg) translateZ(50px); }
+
+.face-u {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.face-f {
+  transform: translateZ(50px);
+}
+
+.face-r {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.face-l {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.face-b {
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+.face-d {
+  transform: rotateX(-90deg) translateZ(50px);
+}
 
 .cubie-sticker {
-	background-image: url(stickers.svg);
-	background-size: 600px 100px;
+  background-image: url(stickers.svg);
+  background-size: 600px 100px;
 }
-.sticker-u { background-position-x: 0; }
-.sticker-f { background-position-x: -100px; }
-.sticker-r { background-position-x: -200px; }
-.sticker-l { background-position-x: -300px; }
-.sticker-b { background-position-x: -400px; }
-.sticker-d { background-position-x: -500px; }
 
-.turn-u1, .turn-d3 { transform: rotateY(-90deg); }
-.turn-f1, .turn-b3 { transform: rotateZ(90deg); }
-.turn-r1, .turn-l3 { transform: rotateX(90deg); }
-.turn-l1, .turn-r3 { transform: rotateX(-90deg); }
-.turn-b1, .turn-f3 { transform: rotateZ(-90deg); }
-.turn-d1, .turn-u3 { transform: rotateY(90deg); }
-.turn-u2 { transform: rotateY(-180deg); }
-.turn-f2 { transform: rotateZ(180deg); }
-.turn-r2 { transform: rotateX(180deg); }
-.turn-l2 { transform: rotateX(-180deg); }
-.turn-b2 { transform: rotateZ(-180deg); }
-.turn-d2 { transform: rotateY(180deg); }
+.sticker-u {
+  background-position-x: 0;
+}
+
+.sticker-f {
+  background-position-x: -100px;
+}
+
+.sticker-r {
+  background-position-x: -200px;
+}
+
+.sticker-l {
+  background-position-x: -300px;
+}
+
+.sticker-b {
+  background-position-x: -400px;
+}
+
+.sticker-d {
+  background-position-x: -500px;
+}
+
+/* TURNS */
+.turn-u1, .turn-d3 {
+  transform: rotateY(-90deg);
+}
+
+.turn-f1, .turn-b3 {
+  transform: rotateZ(90deg);
+}
+
+.turn-r1, .turn-l3 {
+  transform: rotateX(90deg);
+}
+
+.turn-l1, .turn-r3 {
+  transform: rotateX(-90deg);
+}
+
+.turn-b1, .turn-f3 {
+  transform: rotateZ(-90deg);
+}
+
+.turn-d1, .turn-u3 {
+  transform: rotateY(90deg);
+}
+
+.turn-u2 {
+  transform: rotateY(-180deg);
+}
+
+.turn-f2 {
+  transform: rotateZ(180deg);
+}
+
+.turn-r2 {
+  transform: rotateX(180deg);
+}
+
+.turn-l2 {
+  transform: rotateX(-180deg);
+}
+
+.turn-b2 {
+  transform: rotateZ(-180deg);
+}
+
+.turn-d2 {
+  transform: rotateY(180deg);
+}
+
+.turn-m1 {
+  transform: rotateX(-90deg);
+}
+
+.turn-m3 {
+  transform: rotateX(90deg);
+}
+
+.turn-e1 {
+  transform: rotateY(90deg);
+}
+
+.turn-e3 {
+  transform: rotateY(-90deg);
+}
+
+.turn-s1 {
+  transform: rotateZ(90deg);
+}
+
+.turn-s3 {
+  transform: rotateZ(-90deg);
+}
+
+/* Make corner faces quarter-circles */
+.cubie-corner-orientation-0 .cubie-face {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Full square for reference */
+}
+
+/* For corner pieces, we'll use a quarter-circle clip-path */
+.cubie-corner-orientation-0 .face-f,
+.cubie-corner-orientation-0 .face-r,
+.cubie-corner-orientation-0 .face-u {
+  -webkit-clip-path: path("M 50 50 L 50 0 A 50 50 0 0 1 100 50 L 50 50");
+          clip-path: path("M 50 50 L 50 0 A 50 50 0 0 1 100 50 L 50 50");
+}
+
+/* Apply proper rotations to align the quarter circles */
+.cubie-corner-orientation-0 .face-f {
+  transform: translate3d(50px, -50px, 50px) rotate(180deg);
+}
+
+.cubie-corner-orientation-0 .face-r {
+  transform: rotateY(90deg) translate3d(-50px, -50px, 50px) rotate(270deg) rotateY(180deg) rotateX(180deg);
+}
+
+.cubie-corner-orientation-0 .face-u {
+  transform: rotateX(90deg) translate3d(50px, 50px, 50px) rotate(90deg) rotateY(180deg) rotateX(180deg);
+}
+
+/* First, define the base semi-circle shape using clip-path */
+.cubie-edge-orientation-0 .face-f,
+.cubie-edge-orientation-0 .face-r,
+.cubie-edge-orientation-0 .face-u {
+  -webkit-clip-path: path("M 50 0 A 50 50 0 0 1 50 100 L 50 50 Z");
+          clip-path: path("M 50 0 A 50 50 0 0 1 50 100 L 50 50 Z");
+}
+
+/* Transform each face of edge pieces to align properly */
+/* Red/Front face edges */
+.cubie-edge-position-0 .face-f,
+.cubie-edge-position-4 .face-f {
+  transform: translate3d(0px, -50px, 50px) rotate(90deg);
+}
+
+.cubie-edge-position-9 .face-u,
+.cubie-edge-position-8 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+/* Back/Orange-face edges */
+.cubie-edge-position-10 .face-u,
+.cubie-edge-position-11 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+.cubie-edge-position-3 .face-f,
+.cubie-edge-position-7 .face-f {
+  transform: rotateZ(90deg) translate3d(-50px, 0px, 50px);
+}
+
+/* Up/Yellow face edges */
+.cubie-edge-position-0 .face-u,
+.cubie-edge-position-1 .face-u,
+.cubie-edge-position-2 .face-u,
+.cubie-edge-position-3 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+/* Down/White-face edges */
+.cubie-edge-position-5 .face-u,
+.cubie-edge-position-4 .face-u,
+.cubie-edge-position-6 .face-u,
+.cubie-edge-position-7 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+/* Left/Blue face edges */
+.cubie-edge-position-5 .face-f,
+.cubie-edge-position-1 .face-f {
+  transform: rotateZ(90deg) translate3d(-50px, 0px, 50px);
+}
+
+.cubie-edge-position-9 .face-f,
+.cubie-edge-position-11 .face-f {
+  transform: translate3d(0px, -50px, 50px) rotate(90deg);
+}
+
+/* Right/Green face edges */
+.cubie-edge-position-8 .face-f,
+.cubie-edge-position-10 .face-f {
+  transform: translate3d(0px, -50px, 50px) rotate(90deg);
+}
+
+.cubie-edge-position-6 .face-f,
+.cubie-edge-position-2 .face-f {
+  transform: rotateZ(90deg) translate3d(-50px, 0px, 50px);
+}
+
+body {
+  background: lightgrey;
+  overflow: hidden;
+}
+
+.scene {
+  margin: 230px auto;
+  width: 100px;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+@media (max-width: 500px) {
+  .scene {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 400px) {
+  .scene {
+    transform: scale(0.6);
+  }
+}
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50px 50px;
+  transform: rotateY(-30deg) rotateX(-20deg) rotateZ(9deg);
+}
+
+.cube-layer {
+  transform-style: preserve-3d;
+  transform-origin: 50px 50px;
+}
+
+.cube-layer.turn {
+  transition: transform 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.cubie {
+  transform-style: preserve-3d;
+  transform-origin: 50px 50px;
+}
+
+.cubie-corner-position-0 {
+  transform: translate3d(100px, -100px, 100px);
+}
+
+.cubie-corner-position-1 {
+  transform: translate3d(-100px, -100px, 100px) rotateY(-90deg);
+}
+
+.cubie-corner-position-2 {
+  transform: translate3d(100px, -100px, -100px) rotateY(90deg);
+}
+
+.cubie-corner-position-3 {
+  transform: translate3d(-100px, -100px, -100px) rotateY(180deg);
+}
+
+.cubie-corner-position-4 {
+  transform: translate3d(100px, 100px, 100px) rotateX(180deg) rotateY(90deg);
+}
+
+.cubie-corner-position-5 {
+  transform: translate3d(-100px, 100px, 100px) rotateX(180deg) rotateY(180deg);
+}
+
+.cubie-corner-position-6 {
+  transform: translate3d(100px, 100px, -100px) rotateX(180deg);
+}
+
+.cubie-corner-position-7 {
+  transform: translate3d(-100px, 100px, -100px) rotateX(180deg) rotateY(-90deg);
+}
+
+.cubie-corner-orientation-1 {
+  transform: rotateY(-90deg) rotateX(90deg);
+}
+
+.cubie-corner-orientation-2 {
+  transform: rotateY(90deg) rotateZ(-90deg);
+}
+
+.cubie-edge-position-0 {
+  transform: translate3d(0px, -100px, 100px);
+}
+
+.cubie-edge-position-1 {
+  transform: translate3d(-100px, -100px, 0px) rotateY(-90deg);
+}
+
+.cubie-edge-position-2 {
+  transform: translate3d(100px, -100px, 0px) rotateY(90deg);
+}
+
+.cubie-edge-position-3 {
+  transform: translate3d(0px, -100px, -100px) rotateY(180deg);
+}
+
+.cubie-edge-position-4 {
+  transform: translate3d(0px, 100px, 100px) rotateX(180deg) rotateY(180deg);
+}
+
+.cubie-edge-position-5 {
+  transform: translate3d(-100px, 100px, 0px) rotateX(180deg) rotateY(-90deg);
+}
+
+.cubie-edge-position-6 {
+  transform: translate3d(100px, 100px, 0px) rotateX(180deg) rotateY(90deg);
+}
+
+.cubie-edge-position-7 {
+  transform: translate3d(0px, 100px, -100px) rotateX(180deg);
+}
+
+.cubie-edge-position-8 {
+  transform: translate3d(100px, 0px, 100px) rotateX(-90deg) rotateY(90deg);
+}
+
+.cubie-edge-position-9 {
+  transform: translate3d(-100px, 0px, 100px) rotateX(-90deg) rotateY(-90deg);
+}
+
+.cubie-edge-position-10 {
+  transform: translate3d(100px, 0px, -100px) rotateX(90deg) rotateY(90deg);
+}
+
+.cubie-edge-position-11 {
+  transform: translate3d(-100px, 0px, -100px) rotateX(90deg) rotateY(-90deg);
+}
+
+.cubie-edge-orientation-1 {
+  transform: rotateX(-90deg) rotateY(180deg);
+}
+
+.cubie-middle-r {
+  transform: translate3d(100px, 0px, 0px);
+}
+
+.cubie-middle-l {
+  transform: translate3d(-100px, 0px, 0px);
+}
+
+.cubie-middle-f {
+  transform: translate3d(0px, 0px, 100px);
+}
+
+.cubie-middle-b {
+  transform: translate3d(0px, 0px, -100px);
+}
+
+.cubie-middle-u {
+  transform: translate3d(0px, -100px, 0px);
+}
+
+.cubie-middle-d {
+  transform: translate3d(0px, 100px, 0px);
+}
+
+.cubie-face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* background-color: rgba(0,30,60,0.2); */
+  /*border-radius: 16px;*/
+  transform-style: preserve-3d;
+}
+
+.face-u {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.face-f {
+  transform: translateZ(50px);
+}
+
+.face-r {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.face-l {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.face-b {
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+.face-d {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.cubie-sticker {
+  background-image: url(stickers.svg);
+  background-size: 600px 100px;
+}
+
+.sticker-u {
+  background-position-x: 0;
+}
+
+.sticker-f {
+  background-position-x: -100px;
+}
+
+.sticker-r {
+  background-position-x: -200px;
+}
+
+.sticker-l {
+  background-position-x: -300px;
+}
+
+.sticker-b {
+  background-position-x: -400px;
+}
+
+.sticker-d {
+  background-position-x: -500px;
+}
+
+.turn-u1, .turn-d3 {
+  transform: rotateY(-90deg);
+}
+
+.turn-f1, .turn-b3 {
+  transform: rotateZ(90deg);
+}
+
+.turn-r1, .turn-l3 {
+  transform: rotateX(90deg);
+}
+
+.turn-l1, .turn-r3 {
+  transform: rotateX(-90deg);
+}
+
+.turn-b1, .turn-f3 {
+  transform: rotateZ(-90deg);
+}
+
+.turn-d1, .turn-u3 {
+  transform: rotateY(90deg);
+}
+
+.turn-u2 {
+  transform: rotateY(-180deg);
+}
+
+.turn-f2 {
+  transform: rotateZ(180deg);
+}
+
+.turn-r2 {
+  transform: rotateX(180deg);
+}
+
+.turn-l2 {
+  transform: rotateX(-180deg);
+}
+
+.turn-b2 {
+  transform: rotateZ(-180deg);
+}
+
+.turn-d2 {
+  transform: rotateY(180deg);
+}
+
+/* For corner pieces, we'll use a quarter-circle clip-path */
+.cubie-corner-orientation-0, .cubie-corner-orientation-1, .cubie-corner-orientation-2 {
+  /* Apply proper rotations to align the quarter circles */
+}
+.cubie-corner-orientation-0 .face-f, .cubie-corner-orientation-0 .face-r, .cubie-corner-orientation-0 .face-u, .cubie-corner-orientation-1 .face-f, .cubie-corner-orientation-1 .face-r, .cubie-corner-orientation-1 .face-u, .cubie-corner-orientation-2 .face-f, .cubie-corner-orientation-2 .face-r, .cubie-corner-orientation-2 .face-u {
+  -webkit-clip-path: path("M 50 50 L 50 0 A 50 50 0 0 1 100 50 L 50 50");
+          clip-path: path("M 50 50 L 50 0 A 50 50 0 0 1 100 50 L 50 50");
+}
+.cubie-corner-orientation-0 .face-f, .cubie-corner-orientation-1 .face-f, .cubie-corner-orientation-2 .face-f {
+  transform: translate3d(50px, -50px, 50px) rotate(180deg);
+}
+.cubie-corner-orientation-0 .face-r, .cubie-corner-orientation-1 .face-r, .cubie-corner-orientation-2 .face-r {
+  transform: rotateY(90deg) translate3d(-50px, -50px, 50px) rotate(270deg) rotateY(180deg) rotateX(180deg);
+}
+.cubie-corner-orientation-0 .face-u, .cubie-corner-orientation-1 .face-u, .cubie-corner-orientation-2 .face-u {
+  transform: rotateX(90deg) translate3d(50px, 50px, 50px) rotate(90deg) rotateY(180deg) rotateX(180deg);
+}
+
+/* First, define the base semi-circle shape using clip-path */
+.cubie-edge-orientation-0 .face-f, .cubie-edge-orientation-0 .face-r, .cubie-edge-orientation-0 .face-u, .cubie-edge-orientation-1 .face-f, .cubie-edge-orientation-1 .face-r, .cubie-edge-orientation-1 .face-u {
+  -webkit-clip-path: path("M 50 0 A 50 50 0 0 1 50 100 L 50 50 Z");
+          clip-path: path("M 50 0 A 50 50 0 0 1 50 100 L 50 50 Z");
+}
+
+/* Transform each face of edge pieces to align properly */
+/* Red/Front face edges */
+.cubie-edge-position-0 .face-f,
+.cubie-edge-position-4 .face-f {
+  transform: translate3d(0px, -50px, 50px) rotate(90deg);
+}
+
+.cubie-edge-position-9 .face-u,
+.cubie-edge-position-8 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+/* Back/Orange-face edges */
+.cubie-edge-position-10 .face-u,
+.cubie-edge-position-11 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+.cubie-edge-position-3 .face-f,
+.cubie-edge-position-7 .face-f {
+  transform: rotateZ(90deg) translate3d(-50px, 0px, 50px);
+}
+
+/* Up/Yellow face edges */
+.cubie-edge-position-0 .face-u,
+.cubie-edge-position-1 .face-u,
+.cubie-edge-position-2 .face-u,
+.cubie-edge-position-3 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+/* Down/White-face edges */
+.cubie-edge-position-5 .face-u,
+.cubie-edge-position-4 .face-u,
+.cubie-edge-position-6 .face-u,
+.cubie-edge-position-7 .face-u {
+  transform: rotateX(90deg) translate3d(0px, 50px, 50px) rotate(270deg);
+}
+
+/* Left/Blue face edges */
+.cubie-edge-position-5 .face-f,
+.cubie-edge-position-1 .face-f {
+  transform: rotateZ(90deg) translate3d(-50px, 0px, 50px);
+}
+
+.cubie-edge-position-9 .face-f,
+.cubie-edge-position-11 .face-f {
+  transform: translate3d(0px, -50px, 50px) rotate(90deg);
+}
+
+/* Right/Green face edges */
+.cubie-edge-position-8 .face-f,
+.cubie-edge-position-10 .face-f {
+  transform: translate3d(0px, -50px, 50px) rotate(90deg);
+}
+
+.cubie-edge-position-6 .face-f,
+.cubie-edge-position-2 .face-f {
+  transform: rotateZ(90deg) translate3d(-50px, 0px, 50px);
+}
+
+.face-f,
+.face-b,
+.face-r,
+.face-l,
+.face-u,
+.face-d {
+  opacity: 0.5;
+}
+
+.face-f,
+.face-b,
+.face-r,
+.face-l,
+.face-u,
+.face-d {
+  opacity: 0.5;
+}/*# sourceMappingURL=cube.css.map */
